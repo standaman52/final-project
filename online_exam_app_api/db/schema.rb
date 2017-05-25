@@ -10,16 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170524155328) do
+ActiveRecord::Schema.define(version: 20170524234936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "admins", force: :cascade do |t|
-    t.string   "username"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+  create_table "questions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "test_id"
+    t.string   "name"
+    t.string   "option1"
+    t.string   "option2"
+    t.string   "option3"
+    t.string   "option4"
+    t.string   "correctanswer"
+    t.integer  "score"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["test_id"], name: "index_questions_on_test_id", using: :btree
+    t.index ["user_id"], name: "index_questions_on_user_id", using: :btree
+  end
+
+  create_table "tests", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "numberofquestion"
+    t.datetime "begindate"
+    t.datetime "enddate"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -29,4 +48,6 @@ ActiveRecord::Schema.define(version: 20170524155328) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "questions", "tests"
+  add_foreign_key "questions", "users"
 end

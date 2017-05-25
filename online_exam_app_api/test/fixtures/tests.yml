@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  numberofquestion: 1
+  begindate: 2017-05-24 19:29:17
+  enddate: 2017-05-24 19:29:17
+
+two:
+  name: MyString
+  description: MyString
+  numberofquestion: 1
+  begindate: 2017-05-24 19:29:17
+  enddate: 2017-05-24 19:29:17

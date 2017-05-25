@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :questions
+  resources :tests
   resources :users do
     collection do
       post '/login', to: 'users#login'

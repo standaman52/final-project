@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  test: one
+  name: MyString
+  option1: MyString
+  option2: MyString
+  option3: MyString
+  option4: MyString
+  correctanswer: MyString
+  score: 1
+
+two:
+  user: two
+  test: two
+  name: MyString
+  option1: MyString
+  option2: MyString
+  option3: MyString
+  option4: MyString
+  correctanswer: MyString
+  score: 1
