@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'localhost:8000'
+    origins 'https://online-exam-app.herokuapp.com','localhost:8000'
 
     resource '*',
       headers: :any,
