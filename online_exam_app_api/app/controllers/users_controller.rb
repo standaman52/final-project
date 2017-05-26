@@ -46,10 +46,10 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  def destroy
-    @user.destroy
-  end
+  # # DELETE /users/1
+  # def destroy
+  #   @user.destroy
+  # end
 
   private
   def create_token(id, username)
