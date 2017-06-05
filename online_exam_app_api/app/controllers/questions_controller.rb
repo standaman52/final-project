@@ -2,10 +2,16 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :update, :destroy]
 
   # GET /questions
-  def index
-    @questions = Question.all
 
-    render json: @questions.to_json(include:[:user, :test])
+
+  def index
+    if params[:test_id] == "all"
+      @questions = Question.all
+      render json: @questions.to_json(include:[:user, :test])
+    else
+      @questions = Question.where(test_id: params[:test_id])
+      render json: @questions.to_json(include:[:user, :test])
+    end
   end
 
   # GET /questions/1
